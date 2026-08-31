@@ -1,4 +1,7 @@
-
+<?php
+    // inclure la partie ENTETE du site
+    include_once('commun/entete.inc.php');
+?>
         <main class="page-accueil">
             <article class="amorce">
                 <h1>Teeshirts, hoodies, et casquettes fabriqués au Québec 💯</h1>
