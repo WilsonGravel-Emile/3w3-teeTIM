@@ -7,45 +7,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teeTIM // Découvrez nos teeshirts 100% naturelles et conçues au Québec</title>
-    <meta name="description" content="Découvrez notre collection de teeshirts 100% naturels, conçus au Québec par les étudiants du TIM, alliant style, confort et respect de l'environnement.">
+    <title>teeTIM // fibre naturelle ... conception artificielle</title>
+    <meta name="description" content="Page d'accueil du concepteur de vêtements 100% fait au Québec, conçus par les étudiants du TIM à l'aide de designs produits par intelligence artificielle, et fabriqués avec des fibres 100% naturelles et biologiques.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
-<body>
-    <div class="conteneur">
-        <header>
-            <nav class="barre-haut">
-                <a href="#">en</a>
-                <a href="#">es</a>
-                <a class="actif" href="#">fr</a>
-            </nav>
-            <nav class="barre-logo">
-                <label for="cc-btn-responsive" class="material-icons burger">menu</label>
-                <a class="logo" href="index.html"><img src="images/logo.png" alt="Accueil"></a>
-                <a class="material-icons panier" href="panier.html">shopping_cart</a>
-                <input class="recherche" type="search" name="motscles" placeholder="Recherche">
-            </nav>
-            <input type="checkbox" id="cc-btn-responsive">
-            <nav class="principale">
-                <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a href="teeshirts.html">Teeshirts</a>
-                <a href="casquettes.html">Casquettes</a>
-                <a href="hoodies.html">Hoodies</a>
-                <span class="separateur"></span>
-                <a href="aide.html">Aide</a>
-                <a href="apropos.html">À propos de nous</a>
-            </nav>
-        </header>
-        <main class="page-teeshirts">
-            <article class="amorce">
-                <h1>Nos teeshirts</h1>
-            </article>
-            <article class="principal">
-                À venir...
-            </article>
-        </main>
-        <footer>
+<footer>
             <h2>teeTIM</h2>
             <div class="contenu">
                 <section class="achats">
@@ -74,7 +41,4 @@
                 </section>
             </div>
             <p class="da">&copy; Tous droits réservés, teeTIM 2026</p>
-        </footer>
-    </div>
-</body>
-</html>
+</footer>
