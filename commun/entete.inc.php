@@ -1,5 +1,5 @@
-    <!DOCTYPE html>
-<html lang="fr">
+    <!DOCTYPE php>
+<php lang="fr">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,18 +20,18 @@
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
-                <a class="logo" href="index.html"><img src="images/logo.png" alt="Accueil"></a>
-                <a class="material-icons panier" href="panier.html">shopping_cart</a>
+                <a class="logo" href="index.php"><img src="images/logo.png" alt="Accueil"></a>
+                <a class="material-icons panier" href="panier.php">shopping_cart</a>
                 <input class="recherche" type="search" name="motscles" placeholder="Recherche">
             </nav>
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a href="teeshirts.html">Teeshirts</a>
-                <a href="casquettes.html">Casquettes</a>
-                <a href="hoodies.html">Hoodies</a>
+                <a href="teeshirts.php">Teeshirts</a>
+                <a href="casquettes.php">Casquettes</a>
+                <a href="hoodies.php">Hoodies</a>
                 <span class="separateur"></span>
-                <a href="aide.html">Aide</a>
-                <a href="apropos.html">À propos de nous</a>
+                <a href="aide.php">Aide</a>
+                <a href="apropos.php">À propos de nous</a>
             </nav>
     </header>
