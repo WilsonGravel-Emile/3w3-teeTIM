@@ -1,4 +1,14 @@
-    <!DOCTYPE php>
+<?php
+    //Lire le fichier JSON contenant les textes en français
+    $texteJson = file_get_contents("i18/textes-fr.json");
+    // echo $texteJson;
+
+    //Convertir le JSON en structure de donné PHP
+    $texte = json_decode($texteJson, true);
+    print_r($texte);
+
+?>
+<!DOCTYPE php>
 <php lang="fr">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -7,8 +17,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teeTIM // fibre naturelle ... conception artificielle</title>
-    <meta name="description" content="Page d'accueil du concepteur de vêtements 100% fait au Québec, conçus par les étudiants du TIM à l'aide de designs produits par intelligence artificielle, et fabriqués avec des fibres 100% naturelles et biologiques.">
+    <title></title>
+    <meta name="description" content="">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
@@ -27,11 +37,11 @@
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a href="teeshirts.php">Teeshirts</a>
-                <a href="casquettes.php">Casquettes</a>
-                <a href="hoodies.php">Hoodies</a>
+                <a href="teeshirts.php"></a>
+                <a href="casquettes.php"></a>
+                <a href="hoodies.php"></a>
                 <span class="separateur"></span>
-                <a href="aide.php">Aide</a>
-                <a href="apropos.php">À propos de nous</a>
+                <a href="aide.php"></a>
+                <a href="apropos.php"></a>
             </nav>
     </header>
