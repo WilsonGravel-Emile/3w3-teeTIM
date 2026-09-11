@@ -1,0 +1,48 @@
+{
+    "__commentaires__": "Ce fichier contient les libellés statiques du site Web TEETIM",
+    "entete": {
+        "meta": {
+            "title": "teeTIM // fibre naturelle ... design artificiel",
+            "desc": "TEETIM est un créateur de vêtements 100 % basé au Québec, conçu par des étudiants du TIM avec l'aide de designs produits par l'intelligence artificielle, et fabriqué à partir de fibres 100 % naturelles et biologiques."
+        },
+        "logoAlt": "Accueil",
+        "recherchePlaceholder": "Recherche",
+        "menuPrincipalTeeshirts": "T恤",
+        "menuPrincipalCasquettes": "帽子",
+        "menuPrincipalHoodies": "卫衣",
+        "menuPrincipalAide": "帮助",
+        "menuPrincipalNous": "关于我们"
+    },
+    "pp": {
+        "menuSecondaire": {
+            "achatsH3": "您的购买",
+            "navFAQ": "常见问题",
+            "navLivraison": "配送您的包裹",
+            "navConditions": "销售条款",
+            "navConfidentialite": "隐私政策",
+            "aproposH3": "关于 teeTIM",
+            "navCompagnie": "公司",
+            "navEquipe": "团队",
+            "navEmploi": "工作机会",
+            "joindreH3": "联系我们",
+            "contactTel": "免费电话：",
+            "contactCourriel": "电子邮件："
+        },
+        "droits": "保留所有权利，teeTIM"
+    },
+    "accueil": {
+        "amorceH1": "魁北克制造的 T恤、卫衣和帽子 💯",
+        "amorceH2": "在 TIM 设计 ❤️",
+        "amorceH4": "/** 在 DALL-E 的帮助下略作调整 😉 **/",
+        "para1": "如今，T恤已成为每个人衣橱中不可或缺的单品。面对环境问题日益严峻，我们更倾向于选择在魁北克制造的 T恤，以减少环境影响并突出本地手工艺。",
+        "para2": "V领、圆领、宽松或修身、短袖或长袖（适合怕冷的人）、纯色或印花，用来提升整体造型……T恤有多种颜色、风格和图案可供选择。"
+    },
+    "teeshirts": {
+        "h1": "我们的 T 恤",
+        "enConstruction": "即将推出..."
+    },
+    "casquettes": {
+        "h1": "我们的帽子",
+        "enConstruction": "即将推出..."
+    }
+}

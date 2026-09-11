@@ -17,7 +17,7 @@ include_once('commun/entete.inc.php');
     <article class="amorce">
         <h1><?= $_->amorceH1; ?></h1>
         <h2><?= $_->amorceH2; ?></h2>
-        <h4><?= $_->amorceH4; ?></h4>
+        <h4><?= $_->amorceH4; ?>sigmas</h4>
     </article>
     <article class="principal">
         <p>
@@ -28,4 +28,4 @@ include_once('commun/entete.inc.php');
         </p>
     </article>
 </main>
-<?php include_once('commun/p2p.inc.php'); ?>
+<?php include_once('commun/piedpage.inc.php'); ?>

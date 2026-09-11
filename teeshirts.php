@@ -14,4 +14,4 @@ include_once('commun/entete.inc.php');
         <?= $_->enConstruction; ?>
     </article>
 </main>
-<?php include_once('commun/p2p.inc.php'); ?>
+<?php include_once('commun/piedpage.inc.php'); ?>

@@ -4,9 +4,15 @@
 $langue = 'fr';
 
 // Étape 2 : si l'utilisateur a déjà choisi la langue par le passé, alors utiliser ce choix (qui aurait été retenu dans un témoin HTTP - cookie) pour remplacer la valeur de la variable $langue
-
+if (isset($_COOKIE['teetimLangueChoisie'])){
+    $langue = $_COOKIE['teetimLangueChoisie'];
+}
 // Étape 3 : si l'utilisateur choisi explicitement une langue, alors on change la valeur de la variable $langue pour refléter ce choix
-
+if (isset($_GET['lan'])) {
+    $langue = $_GET['lan'];
+    //garde ce choix en mémoire dans un cookie >:<
+    setcookie("teetimLangueChoisie", $langue, time() + 365 * 24 * 60 * 60); // expire l'anné prochaine : en unix
+}
 
 // Étape A : Lire le fichier JSON contenant les textes en français
 // $textesJson = file_get_contents('i18n/textes-' . $langue . '.json'); // Concaténation
@@ -27,7 +33,7 @@ $_pp = $textes->pp;
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?php echo $langue === 'en' ? 'en' : ($langue === 'ch' ? 'zh-CN' : 'fr'); ?>">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,8 +52,9 @@ $_pp = $textes->pp;
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <a class="" href="index.php?lan=fr">fr</a>
-                <a class="" href="index.php?lan=en">en</a>
+                <a class="<?php if($langue==='fr') {echo 'actif';} else {echo '';} ?>" href="index.php?lan=fr">fr</a>
+                <a class="<?php if($langue==='en') {echo 'actif';} else {echo '';} ?>" href="index.php?lan=en">en</a>
+                <a class="<?php if($langue==='ch') {echo 'actif';} else {echo '';} ?>" href="index.php?lan=ch">ch</a>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
@@ -66,3 +73,4 @@ $_pp = $textes->pp;
                 <a href="apropos.php"><?= $_ent->menuPrincipalNous; ?></a>
             </nav>
         </header>
+</body>
