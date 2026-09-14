@@ -1,14 +1,26 @@
 <?php
 // Gérer le choix de langue
+// Déterminer quels sont les choix de langues disponibles
+$languesDispo = [];
+
+//  lire le contenu du dossier 'i18n'
+$contenuI18n = scandir('i18n');
+for ($i = 0; $i < count($contenuI18n); $i++) {
+    if($contenuI18n[$i] !== '.' && $contenuI18n[$i] !== '..'){
+        $languesDispo[] = substr($contenuI18n[$i], 0, 2);
+    }
+}
+
 // Étape 1 : par défaut la langue est le français (fr)
 $langue = 'fr';
 
 // Étape 2 : si l'utilisateur a déjà choisi la langue par le passé, alors utiliser ce choix (qui aurait été retenu dans un témoin HTTP - cookie) pour remplacer la valeur de la variable $langue
-if (isset($_COOKIE['teetimLangueChoisie'])){
+if (isset($_COOKIE['teetimLangueChoisie']) &&
+        in_array($_COOKIE['teetimLangueChoisie'], $languesDispo)){
     $langue = $_COOKIE['teetimLangueChoisie'];
 }
 // Étape 3 : si l'utilisateur choisi explicitement une langue, alors on change la valeur de la variable $langue pour refléter ce choix
-if (isset($_GET['lan'])) {
+if (isset($_GET['lan']) && in_array($_GET['lan'], $languesDispo)) {
     $langue = $_GET['lan'];
     //garde ce choix en mémoire dans un cookie >:<
     setcookie("teetimLangueChoisie", $langue, time() + 365 * 24 * 60 * 60); // expire l'anné prochaine : en unix
@@ -16,7 +28,7 @@ if (isset($_GET['lan'])) {
 
 // Étape A : Lire le fichier JSON contenant les textes en français
 // $textesJson = file_get_contents('i18n/textes-' . $langue . '.json'); // Concaténation
-$textesJson = file_get_contents("i18n/textes-$langue.json"); // Interpolation
+$textesJson = file_get_contents("i18n/$langue.json"); // Interpolation
 
 // Étape B : Convertir le string JSON en structure de données PHP
 $textes = json_decode($textesJson);
@@ -52,9 +64,15 @@ $_pp = $textes->pp;
     <div class="conteneur">
         <header>
             <nav class="barre-haut">
-                <a class="<?php if($langue==='fr') {echo 'actif';} else {echo '';} ?>" href="index.php?lan=fr">fr</a>
-                <a class="<?php if($langue==='en') {echo 'actif';} else {echo '';} ?>" href="index.php?lan=en">en</a>
-                <a class="<?php if($langue==='ch') {echo 'actif';} else {echo '';} ?>" href="index.php?lan=ch">ch</a>
+                <!--  Générer dynamoquement les 'boutons' de choix de langue -->
+                <!-- Répéter un A pour chaque langue disponible -->
+                <?php for($i = 0; $i<count($languesDispo); $i++) { ?>
+                <a class = "<?= ($langue == $languesDispo[$i]) ? 'actif' : ''; ?>" href="?lan=<?= $languesDispo[$i]; ?>">
+                    <?= $languesDispo[$i]; ?>
+                    
+                </a>
+                
+                <?php } ?>
             </nav>
             <nav class="barre-logo">
                 <label for="cc-btn-responsive" class="material-icons burger">menu</label>
@@ -65,8 +83,8 @@ $_pp = $textes->pp;
             <input type="checkbox" id="cc-btn-responsive">
             <nav class="principale">
                 <label for="cc-btn-responsive" class="menu-controle material-icons">close</label>
-                <a href="teeshirts.php"><?= $_ent->menuPrincipalTeeshirts; ?></a>
-                <a href="casquettes.php"><?= $_ent->menuPrincipalCasquettes; ?></a>
+                <a class = "<?= ($page=='teeshirts') ? 'actif' : ''; ?>" href="teeshirts.php"><?= $_ent->menuPrincipalTeeshirts; ?></a>
+                <a class = "<?= ($page=='casquettes') ? 'actif' : ''; ?>" href="casquettes.php"><?= $_ent->menuPrincipalCasquettes; ?></a>
                 <a href="hoodies.php"><?= $_ent->menuPrincipalHoodies; ?></a>
                 <span class="separateur"></span>
                 <a href="aide.php"><?= $_ent->menuPrincipalAide; ?></a>
